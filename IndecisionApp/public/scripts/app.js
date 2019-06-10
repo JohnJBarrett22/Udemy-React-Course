@@ -1,28 +1,23 @@
 'use strict';
 
-// const square = function (x) {
-//     return x * x;
-// }
+//arguments object - no longer bound with arrow functions
 
-// console.log(square(3));
-
-// // const squareArrow = (x) => {
-// //     return x * x;
-// // }
-
-// const squareArrow = (x) => x * x;
-
-// console.log(squareArrow(4))
-
-var fullName = 'John Barrett';
-var firstName = void 0;
-
-var getFirstName = function getFirstName(fullName) {
-    return fullName.split(' ')[0];
+var add = function add(a, b) {
+    return a + b;
 };
-console.log(getFirstName(fullName));
+console.log(add(55, 1));
 
-var getFirstName2 = function getFirstName2(fullName) {
-    return fullName.split(' ')[0];
+// this keyword - no longer bound
+
+var user = {
+    name: 'John',
+    cities: ['North Hollywood', 'Bakersfield', 'Young'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
+
+        this.cities.forEach(function (city) {
+            console.log(_this.name + ' has lived in ' + city);
+        });
+    }
 };
-console.log(getFirstName2(fullName));
+user.printPlacesLived();
