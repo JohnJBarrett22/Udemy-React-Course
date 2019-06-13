@@ -31,7 +31,7 @@ const NoteApp = () => {
             {notes.map((note) => (
                <div key={note.title}>
                 <h3>{note.title}</h3>
-                <h5>{note.body}</h5>
+                <p>{note.body}</p>
                 <button onClick={() => removeNote(note.title)}>X</button>
                </div> 
             ))}
@@ -39,7 +39,7 @@ const NoteApp = () => {
             <form onSubmit={addNote}>
                 Title: <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title"/>
                 <br></br>
-                Body: <input value={body} onChange={(e) => setBody(e.target.value)} placeholder="Body"/>
+                Body: <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="Body"></textarea>
                 <button>Add Note</button>
             </form>
         </div>
